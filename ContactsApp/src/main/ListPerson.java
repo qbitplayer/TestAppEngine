@@ -157,9 +157,6 @@ public class ListPerson {
 		
 		return contacts;
 	}
-
-	
-	
 	
 	private Person findByFullName(String fullName) {
 		 Person personFound =null;  
@@ -172,9 +169,16 @@ public class ListPerson {
 		}
 		return personFound;
 	}
-	
-	
-	
-	
 
+	
+	public Person[] list(){
+		Person array[] = new Person[contacts.length];  
+		int counter = 0;
+		
+		for(int i=0; i<contacts.length; i++){
+			array[i]=array[i]; 
+		}
+		
+		return array; 
+	}
 }

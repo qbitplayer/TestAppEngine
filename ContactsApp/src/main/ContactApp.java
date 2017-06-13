@@ -26,19 +26,28 @@ public class ContactApp {
 	
 		
 		String[] strContacts = FileHelper.readFile("fileName.txt"); 
-		ListPerson list = new ListPerson(strContacts ); 
+		if(strContacts==null)
+			strContacts = new String[0]; 
+		
+		
+		ListPerson list = new ListPerson(strContacts); 
 		boolean exit=false; 
 		
 		
 		
 		do{
 			
+			UserInterface.printfMenu(); 
+			
 			String key = UserInterface.scannOption();
 			
 			switch (key) {
 			
-				case "a":  
+				case "a": 
+					
+					
 					list.add(UserInterface.scannContact()); 
+					
 						
 					break;
 				case "r":  
@@ -46,7 +55,7 @@ public class ContactApp {
 						
 					break;
 				case "l":
-					
+					UserInterface.printList(list.list()); 
 					break;
 					
 				case "exit":
