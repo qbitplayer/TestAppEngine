@@ -147,18 +147,12 @@ public class ListPerson {
 		
 		Arrays.sort(fullNames); 
 		
-		
 		String name = Person.getNameFromFullName( fullNames[0]); 
 		
 		
 		Person person = findByFullName(name);
 		
 		listSort[0] = person; 
-		
-		
-		
-		
-		
 		
 		
 		return contacts;
