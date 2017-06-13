@@ -1,5 +1,7 @@
 package main;
 
+import java.util.Arrays;
+
 public class ListPerson {
 	
 	private Person[] contacts;
@@ -44,6 +46,11 @@ public class ListPerson {
 	 */
 	public void set(Person person, int index){
 		// TODO Auto-generated method stub
+		if(index< 0 || index >= contacts.length)
+			throw new RuntimeException("Indice fuera de rango");  
+		
+		contacts[index]=person; 
+		
 	}
 	
 
@@ -83,13 +90,14 @@ public class ListPerson {
 	 * @param person
 	 */
 	public void remove(Person person) {
-		int index = indexOf(person); 
-		if(index>-1)
-			remove(index);   
+		remove(indexOf(person));   
 	}
 	
 	public void remove(int index) {
+		if(index< 0 || index >= contacts.length)
+			return; 
 			
+		
 	}
 	
 	/**
@@ -131,8 +139,48 @@ public class ListPerson {
 	 */
 	public Person[] sort(){
 		// TODO Auto-generated method stub
+		String fullNames[] = new String[contacts.length]; 
+		Person[] listSort = new Person[contacts.length]; 
+		
+		fullNames[0] = contacts[0].getFullName(); 
+		
+		
+		Arrays.sort(fullNames); 
+		
+		
+		String name = Person.getNameFromFullName( fullNames[0]); 
+		
+		
+		Person person = findByFullName(name);
+		
+		listSort[0] = person; 
+		
+		
+		
+		
+		
+		
+		
 		return contacts;
 	}
+
+	
+	
+	
+	private Person findByFullName(String fullName) {
+		 Person personFound =null;  
+		// TODO Auto-generated method stub	
+		for(int i=0; i< contacts.length; i++){
+			if(contacts[i].getFullName().equals(fullName)){
+				personFound = contacts[i]; 
+				break; 
+			}
+		}
+		return personFound;
+	}
+	
+	
+	
 	
 
 }

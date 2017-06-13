@@ -105,7 +105,20 @@ public class Person {
 
 
 	
+	public String getFullName(){
+		return getName() + " " + getSurname();
+	}
+	
+	
+	public static String getNameFromFullName(String strfullName){
+		String  fullName[] = strfullName.split(" "); 
+		return fullName [0];
+	}
 
+	public static String getSurnameFromFullName(String strfullName){
+		String  fullName[] = strfullName.split(" "); 
+		return fullName.length==2?fullName [1]:""; 
+	}
 	
 
 }
