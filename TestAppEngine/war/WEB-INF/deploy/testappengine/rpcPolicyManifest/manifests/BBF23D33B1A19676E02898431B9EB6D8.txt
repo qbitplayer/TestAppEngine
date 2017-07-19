@@ -1,0 +1,2 @@
+serviceClass: com.poo.testapp.client.GreetingService
+path: 38D8B3ED42FDCEB8AFD9ABDF88B6E907.gwt.rpc
